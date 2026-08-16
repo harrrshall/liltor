@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voice agents | Liltor</title>
+  <meta name="description" content="Liltor voice agents for dealership service, parts, and sales. Handoff diagrams, dealer personas, DMS families, and a sample call flow.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="product">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav-inner">
+      <a class="wordmark" href="index.html" aria-label="Liltor home">L<span class="lilt-i">i</span>ltor</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">Menu</button>
+      <nav id="site-nav" class="site-nav">
+        <a class="is-active" href="product.html">Product</a>
+        <a href="product.html#dealers">For dealers</a>
+        <a href="product.html#integrations">Integrations</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html#security">Security</a>
+        <a class="btn btn-primary" href="about.html#contact">Book a lot walkthrough</a>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Voice agents</p>
+        <h1>Subscription agents that cover more of the operation as you add lanes.</h1>
+        <p class="lede">Usage caps and overage sit on the order form in plain numbers. Service, parts, and BDC share one rooftop voice, one handoff, and one adaptation loop.</p>
+        <p><a class="btn btn-primary" href="docs.html">Read the call-flow scripts</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="service">
+      <div class="wrap lane-block">
+        <div>
+          <span class="chip chip-amber">After hours</span>
+          <h2>Service lane</h2>
+          <p>The service phone is still the store. Liltor answers inbound, books the drive, sends reminders, and handles “is my car done” against the repair order.</p>
+        </div>
+        <div class="card">
+          <h3>What the agent does</h3>
+          <ul>
+            <li>Inbound scheduling against advisor time and stall capacity</li>
+            <li>Status on open ROs, including parts waits</li>
+            <li>Loaner, shuttle, and after-hours key-box rules from config</li>
+            <li>Triage to the named advisor when the customer asks for a person</li>
+          </ul>
+          <p class="hours">Typical book: Mon-Sat 07:30 to 18:00. After hours covered on Full lot.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-fog" id="parts">
+      <div class="wrap lane-block">
+        <div>
+          <span class="chip chip-teal">Counter</span>
+          <h2>Parts</h2>
+          <p>Counter overflow, ETA, and special-order status. The agent reads the SKU, the warehouse promise, and the deposit rule. Handoff when the line needs a counter person.</p>
+        </div>
+        <div class="card">
+          <h3>What the agent does</h3>
+          <ul>
+            <li>Will-call and special-order status by RO or PO</li>
+            <li>ETA from the stocking source you already use</li>
+            <li>Deposit collection path handed to your cashier process</li>
+            <li>Handoff when the SKU is superseded, backordered, or priced on request</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sales">
+      <div class="wrap lane-block">
+        <div>
+          <span class="chip chip-teal">BDC</span>
+          <h2>Sales and BDC</h2>
+          <p>Internet lead callbacks, appointment setting, and outbound follow-up. Transfer to a desk with the transcript so the salesperson walks in warm.</p>
+        </div>
+        <div class="card">
+          <h3>What the agent does</h3>
+          <ul>
+            <li>Same-day callback on web leads during posted BDC hours</li>
+            <li>Test-drive and video-walkaround booking on the desk calendar</li>
+            <li>No-show recapture the next morning</li>
+            <li>One-tap transfer to the assigned closer, transcript attached</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-fog">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Handoff</p>
+          <h2>One tap, then the next adaptation.</h2>
+          <p>The agent stays on the line until a person takes it. The recording and the transcript feed the rooftop model that week.</p>
+        </div>
+        <ol class="flow">
+          <li><strong>Call in</strong> Hunt group or DID lands on Liltor for the posted hours and after hours.</li>
+          <li><strong>Act</strong> Book, status, or follow-up against DMS, parts, and the desk calendar.</li>
+          <li><strong>Handoff</strong> Advisor, counter, or closer takes the live call plus notes.</li>
+          <li><strong>Adapt</strong> That rooftop’s next week sounds more like the people who took the handoff.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="use-cases">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Use cases</p>
+          <h2>Call type, booking action, handoff rule.</h2>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Single-point store</h3>
+            <p><strong>Call:</strong> After-hours service inbound.</p>
+            <p><strong>Action:</strong> Write the first available stall after 07:30 and text the confirmation.</p>
+            <p><strong>Handoff:</strong> Customer asks for the service manager by name.</p>
+          </article>
+          <article class="card">
+            <h3>Group</h3>
+            <p><strong>Call:</strong> Overflow across rooftops on Saturday.</p>
+            <p><strong>Action:</strong> Keep each book local. Never offer a stall at a sister store unless config allows it.</p>
+            <p><strong>Handoff:</strong> Group CIO’s named ops line for DMS write failures.</p>
+          </article>
+          <article class="card card-pip">
+            <h3>Seasonal surge</h3>
+            <p><strong>Call:</strong> First freeze, batteries and tires.</p>
+            <p><strong>Action:</strong> Cap waiters, offer next-day, keep loaner rules tight.</p>
+            <p><strong>Handoff:</strong> Waitlist longer than the posted max, or a fleet account.</p>
+          </article>
+          <article class="card card-pip">
+            <h3>Recall spike</h3>
+            <p><strong>Call:</strong> OEM recall inbound for a week.</p>
+            <p><strong>Action:</strong> Book recall-only slots you loaded. Read the campaign ID back.</p>
+            <p><strong>Handoff:</strong> VIN mismatch, prior failed campaign, or an angry owner.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-fog" id="dealers">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">For dealers</p>
+          <h2>Personas we walk the lot with.</h2>
+          <p>Logos wait until legal clears them. These are the people in the room on a walkthrough.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Dealer principal</h3>
+            <p>Owns the rooftop P&amp;L. Cares that after-hours stops leaking, that the voice sounds like the store, and that a person can take the call in one tap.</p>
+          </article>
+          <article class="card">
+            <h3>Fixed-ops director</h3>
+            <p>Owns hours, loaners, and the service book. Cares that the agent writes clean ROs and only the stalls that exist on the book.</p>
+          </article>
+          <article class="card">
+            <h3>Group CIO</h3>
+            <p>Owns DMS, telephony, SSO, and retention. Cares that Liltor sits under one agreement, with US residency options on the order form.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integrations">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Integrations</p>
+          <h2>Confirm your stack on the walkthrough.</h2>
+          <p>Common families we map. Porting is a project we schedule. Telephony partners sit under Liltor’s agreement.</p>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Families we see on lots</th>
+              <th>What we need from you</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DMS</td>
+              <td>CDK, Reynolds and Reynolds, Dealertrack, Tekion</td>
+              <td>A booking owner, hours, and a write path for appointments</td>
+            </tr>
+            <tr>
+              <td>Telephony</td>
+              <td>Existing hunt groups, SIP trunks, posted DIDs</td>
+              <td>A porting window and after-hours routing</td>
+            </tr>
+            <tr>
+              <td>Calendars</td>
+              <td>Service books, advisor time, loaner boards, BDC desks</td>
+              <td>Which book is source of truth per lane</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1.2rem"><a class="btn btn-primary" href="about.html#contact">Book a lot walkthrough</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Product</h2>
+          <a href="product.html#service">Service</a>
+          <a href="product.html#parts">Parts</a>
+          <a href="product.html#sales">Sales</a>
+        </div>
+        <div>
+          <h2>Dealers</h2>
+          <a href="product.html#integrations">Integrations</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html#security">Security</a>
+        </div>
+        <div>
+          <h2>Company</h2>
+          <a href="about.html">About</a>
+          <a href="about.html#careers">Careers</a>
+          <a href="docs.html#lot-notes">Lot notes</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+        <div>
+          <p class="footer-tagline">A voice on the lot.</p>
+          <svg class="lilt-glyph" viewBox="0 0 42 28" aria-hidden="true">
+            <path d="M2 22C10 22 12 8 21 8s9 12 19-4" fill="none" stroke="#2A8F8A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="40" cy="4" r="2" fill="#D4893A"/>
+          </svg>
+          <p class="muted" style="color:#E4D9C8">Rahul · <a href="mailto:ujjwal@liltor.xyz">ujjwal@liltor.xyz</a></p>
+        </div>
+      </div>
+      <div class="legal-row">
+        <a href="about.html#privacy">Privacy</a>
+        <a href="about.html#terms">Terms</a>
+        <span>© Liltor</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

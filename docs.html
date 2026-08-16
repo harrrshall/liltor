@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Call flows and lot notes | Liltor</title>
+  <meta name="description" content="Liltor sample call-flow scripts for service, parts, and BDC, plus lot notes on the name, after-hours, and handoffs.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav-inner">
+      <a class="wordmark" href="index.html" aria-label="Liltor home">L<span class="lilt-i">i</span>ltor</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">Menu</button>
+      <nav id="site-nav" class="site-nav">
+        <a href="product.html">Product</a>
+        <a href="product.html#dealers">For dealers</a>
+        <a href="product.html#integrations">Integrations</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html#security">Security</a>
+        <a class="btn btn-primary" href="about.html#contact">Book a lot walkthrough</a>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Docs</p>
+        <h1>Call flows you can read out loud.</h1>
+        <p class="lede">Sample scripts for service, parts, and BDC. Hours and loaner rules are config. These lines are labeled samples for Cedar Ridge, a fictional rooftop used in demos.</p>
+      </div>
+    </section>
+
+    <section class="section" id="go-live">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Go-live checklist</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>1. Audio consent</h3>
+            <p>Record and label a week or two of real calls. Advisors know recordings are on. The consent path is written before the first file leaves the store.</p>
+          </article>
+          <article class="card">
+            <h3>2. Config</h3>
+            <p>Hours, loaner rules, shuttle, key-box, recall slots, and the DMS booking owner. If it is not in config, the agent will not invent it.</p>
+          </article>
+          <article class="card">
+            <h3>3. Handoff drill</h3>
+            <p>One-tap to the floor. Production calls start after the drill succeeds twice in a row on a live hunt group.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-fog" id="service-script">
+      <div class="wrap">
+        <p class="eyebrow">Sample call flow</p>
+        <h2>Service inbound, after hours</h2>
+        <p>Inbound, Service, 19:42, After hours. Agent books against the next morning book and offers the key box.</p>
+        <div class="script-shell">
+          <div class="console-meta">
+            <span>Cedar Ridge Service</span>
+            <span class="hours">19:42</span>
+          </div>
+          <ol class="call-script">
+            <li class="turn"><span class="who">Liltor</span><p>Good evening, Cedar Ridge Service. You have reached the lot desk. How can I help you tonight?</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Hi, I dropped my CR-V off this morning. Is it done?</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>I can look that up. What is the last name on the repair order?</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Walsh.</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>Thank you. I have a 2023 CR-V, RO 18804, in for an alignment and an oil leak. Status is complete. Service drive closed at 18:00. I can keep the keys in the after-hours box and text you the code, or I can book a 07:45 pickup with the shuttle.</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Box is fine. Can I get a loaner tomorrow? I have a 90 mile drive.</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>Loaners release weekdays from 07:30 to 17:00. I can put you on the 08:00 loaner list and text you when it is staged. The oil leak is closed, so this would be a courtesy car for the drive, subject to the posted license and insurance check.</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Do that.</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>You are on the 08:00 list. I am texting the box code to this number now. If the leak returns, call this line and we will open a new RO. Anything else on the car tonight?</p></li>
+            <li class="turn"><span class="who">Caller</span><p>That is it.</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>Thank you for calling Cedar Ridge Service. We will see you in the morning.</p></li>
+          </ol>
+        </div>
+        <p class="muted" style="margin-top:1rem">Handoff rule for this flow: customer asks for an advisor by name, VIN and last name disagree, or the RO is still open with a parts wait past the promised time.</p>
+      </div>
+    </section>
+
+    <section class="section" id="parts-script">
+      <div class="wrap">
+        <h2>Parts counter overflow</h2>
+        <p>Inbound, Parts, 12:18. Agent reads ETA. Handoffs when the SKU is superseded.</p>
+        <div class="script-shell">
+          <ol class="call-script">
+            <li class="turn"><span class="who">Liltor</span><p>Cedar Ridge Parts, this is the lot desk. How can I help?</p></li>
+            <li class="turn"><span class="who">Caller</span><p>I am waiting on a cabin filter for a 2021 Pilot. They said Thursday.</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>I can check that. Last name, or the PO number if you have it?</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Mehta, PO 7721.</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>PO 7721, Honda 80291-TBA-A01, on order from the PDC. Promise is Thursday 10:00. Will-call window that day is 07:30 to 17:00. I can text you when it hits the bin.</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Is there a better filter? Mine keeps clogging.</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>That is a counter question. I am moving you to parts with this PO and the clogging note. Stay on the line.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-fog" id="sales-script">
+      <div class="wrap">
+        <h2>BDC internet lead callback</h2>
+        <p>Outbound, Sales, 10:05. Agent sets a desk appointment and transfers with the transcript.</p>
+        <div class="script-shell">
+          <ol class="call-script">
+            <li class="turn"><span class="who">Liltor</span><p>Hi, this is Cedar Ridge calling for Alex Kim about the 2024 Ridgeline you asked on. Did I catch you at an okay time?</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Yeah. Is the gray one still there?</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>Stock 4418, Sonic Gray, still on the lot as of this morning. I can set a 16:30 walkaround with Jordan on the truck desk, or a Saturday 11:00. Which holds for you?</p></li>
+            <li class="turn"><span class="who">Caller</span><p>Today at 16:30. Can I talk to someone now about the payment?</p></li>
+            <li class="turn"><span class="who">Liltor</span><p>I am transferring you to Jordan with the stock number and the 16:30 hold. They will have this call on screen.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Hours, loaners, and handoff rules</h2>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Config</th>
+              <th>Default on Full lot</th>
+              <th>Agent behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Service hours</td>
+              <td class="hours">Mon-Sat 07:30 to 18:00</td>
+              <td>After hours answers, books the next open stall, never invents a night drop unless the key box is on.</td>
+            </tr>
+            <tr>
+              <td>Loaners</td>
+              <td class="hours">07:30 to 17:00 weekdays</td>
+              <td>Waitlist only after hours. License and insurance check stays with the advisor.</td>
+            </tr>
+            <tr>
+              <td>Handoff</td>
+              <td>One tap</td>
+              <td>Named person, VIN mismatch, angry owner, superseded SKU, desk deal, DMS write failure.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section section-fog note-list" id="lot-notes">
+      <div class="wrap">
+        <p class="eyebrow">Lot notes</p>
+        <h2>From the desk</h2>
+
+        <article id="named-for-the-lilt">
+          <h3>Named for the lilt</h3>
+          <p>A lilt is a pleasant rising cadence in speech. Liltor is named for the quality of the voice on the lot. Pronounce it LIL-tor. The rising mark on the i is that cadence drawn small.</p>
+          <p>Stores test us the same way every time: play a call for the service manager who has been on the phone for twelve years. If they say it sounds like us, the rooftop is ready for production traffic.</p>
+        </article>
+
+        <article id="after-hours">
+          <h3>After-hours is a revenue hour</h3>
+          <p>The book closes at 18:00. The phone keeps ringing. Owners call from the driveway with a dead battery, a recall letter, or a car that has been on the lot since morning. Voicemail turns those into Tuesday problems. An agent that can write the next stall and text a key-box code keeps Tuesday for the work that needs a lift.</p>
+        </article>
+
+        <article id="handoffs">
+          <h3>Handoffs that teach the next call</h3>
+          <p>Every one-tap handoff is labeled. The advisor’s first sentence after they take the line is the correction the rooftop model needs. Weekly tuning on Full lot is that pile, cleaned, then shipped back into the agent for this store only.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Product</h2>
+          <a href="product.html#service">Service</a>
+          <a href="product.html#parts">Parts</a>
+          <a href="product.html#sales">Sales</a>
+        </div>
+        <div>
+          <h2>Dealers</h2>
+          <a href="product.html#integrations">Integrations</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html#security">Security</a>
+        </div>
+        <div>
+          <h2>Company</h2>
+          <a href="about.html">About</a>
+          <a href="about.html#careers">Careers</a>
+          <a href="docs.html#lot-notes">Lot notes</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+        <div>
+          <p class="footer-tagline">A voice on the lot.</p>
+          <svg class="lilt-glyph" viewBox="0 0 42 28" aria-hidden="true">
+            <path d="M2 22C10 22 12 8 21 8s9 12 19-4" fill="none" stroke="#2A8F8A" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="40" cy="4" r="2" fill="#D4893A"/>
+          </svg>
+          <p class="muted" style="color:#E4D9C8">Rahul · <a href="mailto:ujjwal@liltor.xyz">ujjwal@liltor.xyz</a></p>
+        </div>
+      </div>
+      <div class="legal-row">
+        <a href="about.html#privacy">Privacy</a>
+        <a href="about.html#terms">Terms</a>
+        <span>© Liltor</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
